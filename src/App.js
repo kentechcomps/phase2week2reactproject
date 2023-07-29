@@ -1,25 +1,36 @@
-import logo from './logo.svg';
+import React ,{useState ,useEffect} from 'react';
 import './App.css';
 
 function App() {
+
+ const [bots , setBots] = useState([]);
+
+ useEffect(()=>{
+fetch("http://localhost:4000/bots")
+.then((r) =>r.json())
+.then((bot)=>{
+  setBots(bot)
+})
+
+ },[])
+ 
+ const mappeddata =   bots.map((bot) => {
+  console.log(bot);
+   return (
+    <li key={bot.id}>
+      <p>{bot.name}</p>
+      <h3>{bot.health}</h3>
+    </li>
+  );
+})
+ 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ul>
+      {mappeddata}
+      </ul>
+ 
     </div>
   );
 }
-
 export default App;
