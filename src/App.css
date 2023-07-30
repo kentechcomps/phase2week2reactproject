@@ -1,1 +1,31 @@
 
+.App{
+  display: flex;
+  flex-wrap: wrap;
+
+} 
+.App li{
+  height: 300px;
+  margin: 14px;
+  flex-basis: calc(15%);
+  text-decoration: none;
+  list-style: none;
+
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
+}
+.App li p{
+  font-size: xx-small;
+}
+.carddiv{
+  display: flex;
+  justify-content: space-evenly;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+ 
+
+}
+.App li img{
+   width: 50%;
+   height: 55%;
+}
+
+
