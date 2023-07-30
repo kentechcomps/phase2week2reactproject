@@ -7,6 +7,13 @@ function App() {
  const [bots , setBots] = useState([]);
  const [army , setArmy] = useState([]);
 
+
+
+ const releaseFromArmy = (armyitem) => {
+  const updatedArmy = army.filter((b) => b.id !== armyitem.id);
+  setArmy(updatedArmy);
+};
+
  const addToarmy = (bot)=>{
   console.log();
 
@@ -48,6 +55,7 @@ fetch("http://localhost:3000/bots")
      {mappeddata}
     <AddToarmy 
     army ={army} 
+    onRelease = {releaseFromArmy}  
     />
     </div>
   );

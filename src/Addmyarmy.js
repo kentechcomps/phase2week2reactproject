@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Addmyarmy({army}){
+function Addmyarmy({army ,  onRelease}){
   
 const loopedArmy = army.map((armyitem)=>{
 
@@ -10,6 +10,8 @@ const loopedArmy = army.map((armyitem)=>{
         <li key = {armyitem.id}>
         <p>{armyitem.id}</p>
         <img src={armyitem.avatar_url}/>
+        <button  onClick={onRelease} >Releasebot</button>
+        <button></button>
      </li>
 )})
 return(
