@@ -27,5 +27,8 @@
    width: 50%;
    height: 55%;
 }
+#deletebtn{
+  background-color: red;
+}
 
 

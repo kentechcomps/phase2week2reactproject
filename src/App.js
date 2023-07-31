@@ -10,7 +10,9 @@ function App() {
 
 
  const releaseFromArmy = (armyitem) => {
+  console.log(armyitem);
   const updatedArmy = army.filter((b) => b.id !== armyitem.id);
+  console.log(updatedArmy)
   setArmy(updatedArmy);
 };
 
@@ -48,6 +50,26 @@ fetch("http://localhost:3000/bots")
     </li>
   );
 })
+
+const dischargeBot = (armyitem) => {
+    
+  fetch(`http://localhost:3000/bots/${armyitem.id}`, {
+    method: "DELETE",
+  })
+    .then((r) => r.json())
+    .then(() => console.log("deleted!"));
+  //  just update the frontend state.
+  const updatedBots = bots.filter((b) => b.id !== armyitem.id);
+  setBots(updatedBots);
+
+  // Also remove the bot from the army if it was enlisted
+  const updatedArmy = army.filter((b) => b.id !== armyitem.id);
+  setArmy(updatedArmy);
+};
+
+
+
+
  
   return (
   
@@ -56,6 +78,7 @@ fetch("http://localhost:3000/bots")
     <AddToarmy 
     army ={army} 
     onRelease = {releaseFromArmy}  
+    onDelete = { dischargeBot}
     />
     </div>
   );
