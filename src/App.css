@@ -30,5 +30,8 @@
 #deletebtn{
   background-color: red;
 }
+#catchphrase{
+  word-wrap: break-word;
+}
 
 

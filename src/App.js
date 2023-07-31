@@ -38,7 +38,7 @@ fetch("http://localhost:3000/bots")
     <li key={bot.id}>
       <img src={bot.avatar_url}/>
       <h3>{bot.name}</h3>
-      <p>{bot.catchphrase}</p>
+      <p id='catchphrase'>{bot.catchphrase}</p>
       <div className='carddiv'>
         <p>{bot.health}</p>
         <p>{bot.damage}</p>
