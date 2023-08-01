@@ -25,7 +25,7 @@ function App() {
   }
  }
  useEffect(()=>{
-fetch("http://localhost:3000/bots")
+fetch("https://db-botbattlr.onrender.com/bots")
 .then((r) =>r.json())
 .then((bot)=>{
   setBots(bot)
@@ -54,7 +54,7 @@ fetch("http://localhost:3000/bots")
 
 const dischargeBot = (armyitem) => {
     
-  fetch(`http://localhost:3000/bots/${armyitem.id}`, {
+  fetch(`https://db-botbattlr.onrender.com/bots/${armyitem.id}`, {
     method: "DELETE",
   })
     .then((r) => r.json())
