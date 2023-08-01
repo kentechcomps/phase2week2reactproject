@@ -36,6 +36,7 @@ fetch("http://localhost:3000/bots")
  const mappeddata =   bots.map((bot) => {
    return (
     <li key={bot.id}>
+      
       <img src={bot.avatar_url}/>
       <h3>{bot.name}</h3>
       <p id='catchphrase'>{bot.catchphrase}</p>
@@ -72,15 +73,19 @@ const dischargeBot = (armyitem) => {
 
  
   return (
-  
-    <div className="App">
-     {mappeddata}
-    <AddToarmy 
+    <div>
+      <h2>MY bots</h2>
+      <AddToarmy 
     army ={army} 
     onRelease = {releaseFromArmy}  
     onDelete = { dischargeBot}
     />
+    <div className="App">
+     {mappeddata}
+   
     </div>
+    </div>
+    
   );
 }
 export default App;
