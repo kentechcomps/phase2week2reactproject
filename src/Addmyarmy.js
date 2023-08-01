@@ -11,8 +11,11 @@ const loopedArmy = army.map((armyitem)=>{
         <li key = {armyitem.id}>
         <p>{armyitem.id}</p>
         <img src={armyitem.avatar_url}/>
+        <div id="armycardsbtn">
         <button id="relesebtn"  onClick={() => onRelease(armyitem)} >Releasebot</button>
         <button id="deletebtn" onClick={()=>onDelete(armyitem)}>Delete</button>
+        </div>
+        
      </li>
 )})
 return(

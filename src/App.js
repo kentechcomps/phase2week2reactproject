@@ -41,7 +41,7 @@ fetch("http://localhost:3000/bots")
       <h3>{bot.name}</h3>
       <p id='catchphrase'>{bot.catchphrase}</p>
       <div className='carddiv'>
-        <p>{bot.health}</p>
+        <p>  {bot.health}</p>
         <p>{bot.damage}</p>
         <p>{bot.armor}</p>
       </div>

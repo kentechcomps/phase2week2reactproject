@@ -59,6 +59,9 @@
   width: 50%;
   height: 55%;
 }
-
+#armycardsbtn{
+  display: flex;
+  justify-content: space-evenly;
+}
 
 
